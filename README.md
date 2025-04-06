@@ -11,7 +11,7 @@ tags:
 
 # 3-Minute Portfolio
 
-🚀 Built in just 3 minutes using [DeepSite](https://huggingface.co/spaces/enzostvs/deepsite)!  
+🚀 Built in just 3 minutes using [DeepSite](https://huggingface.co/spaces/enzostvs/deepsite)!
 
 This portfolio showcases how quickly you can create a professional-looking site with DeepSite's tool.
 
