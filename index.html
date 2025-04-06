@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Arbi Nsibi - ML Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Old+Standard+TT:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Old Standard TT', serif;
+            background-color: #f5f1e6;
+            color: #3a3226;
+            line-height: 1.6;
+        }
+        
+        .header-font {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+        
+        .paper-texture {
+            background-image: url('https://www.transparenttextures.com/patterns/rice-paper.png');
+        }
+        
+        .ink-border {
+            border: 8px solid transparent;
+            border-image: url('https://www.transparenttextures.com/patterns/black-paper.png') 10% round;
+        }
+        
+        .sepia-filter {
+            filter: sepia(30%);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #3a3226;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3a3226; }
+        }
+        
+        .mechanical-icon {
+            transition: transform 0.7s ease-in-out;
+        }
+        
+        .mechanical-icon:hover {
+            transform: rotate(360deg);
+        }
+        
+        .ink-underline {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .ink-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #3a3226;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        
+        .ink-underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        .vintage-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
+                        inset 0 0 20px rgba(0, 0, 0, 0.05),
+                        0 0 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .vintage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
+                        inset 0 0 20px rgba(0, 0, 0, 0.05),
+                        0 0 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .inkwell {
+            position: relative;
+        }
+        
+        .inkwell::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(58, 50, 38, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background: #3a3226;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 5px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #3a3226;
+        }
+        
+        .skill-pill {
+            display: inline-block;
+            background-color: #e5e7eb;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body class="paper-texture">
+    <!-- Letterhead Section -->
+    <header class="inkwell py-8 px-4 md:px-12">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="text-center md:text-left mb-6 md:mb-0">
+                <h1 class="header-font text-4xl md:text-5xl font-bold mb-2">Mohamed Arbi Nsibi</h1>
+                <p class="text-xl italic">Machine Learning Engineer</p>
+                <p class="text-sm mt-2">ICT Engineering Student @ SUP'COM</p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-gray-800 sepia-filter">
+                    <img src="asta.png" alt="Portrait of Mohamed Arbi Nsibi" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-900 text-amber-100 py-4 shadow-lg">
+        <div class="container mx-auto px-4">
+            <ul class="flex flex-wrap justify-center space-x-1 md:space-x-6">
+                <li><a href="#profile" class="ink-underline px-2 py-1 hover:text-amber-300">Profile</a></li>
+                <li><a href="#education" class="ink-underline px-2 py-1 hover:text-amber-300">Education</a></li>
+                <li><a href="#experience" class="ink-underline px-2 py-1 hover:text-amber-300">Experience</a></li>
+                <li><a href="#projects" class="ink-underline px-2 py-1 hover:text-amber-300">Projects</a></li>
+                <li><a href="#skills" class="ink-underline px-2 py-1 hover:text-amber-300">Skills</a></li>
+                <li><a href="#contact" class="ink-underline px-2 py-1 hover:text-amber-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+        <!-- Profile Section -->
+        <section id="profile" class="mb-20">
+            <div class="flex items-center mb-8">
+                <div class="flex-1 border-t border-gray-700"></div>
+                <h2 class="header-font text-3xl mx-4 text-center">Profile</h2>
+                <div class="flex-1 border-t border-gray-700"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 bg-white p-8 rounded-lg vintage-card ink-border">
+                    <h3 class="header-font text-2xl mb-4">Professional Summary</h3>
+                    <p class="mb-4">Aspiring Machine Learning Engineer with experience in AI-powered systems and model development. Former GDSC Lead and current mentor at SUP'COM. Strong in TensorFlow, Keras, and PyTorch. Built an automated candidate matching system and invoice verification models. Passionate about driving AI innovation.</p>
+                    <p class="mb-4">My work focuses on bridging the gap between theoretical machine learning concepts and practical, real-world applications that solve meaningful problems.</p>
+                    <p>When not engaged in technical pursuits, I enjoy mentoring students, participating in hackathons, and contributing to open-source AI projects.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg vintage-card">
+                    <h3 class="header-font text-2xl mb-4 text-center">Key Attributes</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-brain mr-3 mt-1 text-gray-700 mechanical-icon"></i>
+                            <span>Machine Learning & AI</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-robot mr-3 mt-1 text-gray-700 mechanical-icon"></i>
+                            <span>Generative AI Systems</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-project-diagram mr-3 mt-1 text-gray-700 mechanical-icon"></i>
+                            <span>Full-stack ML Solutions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-users mr-3 mt-1 text-gray-700 mechanical-icon"></i>
+                            <span>Technical Leadership</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-lightbulb mr-3 mt-1 text-gray-700 mechanical-icon"></i>
+                            <span>Innovation & Problem Solving</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-8 p-4 bg-gray-100 rounded border border-gray-300">
+                        <h4 class="header-font text-lg mb-2">Current Focus</h4>
+                        <p class="text-sm italic">"Developing medical AI systems that integrate RAG with Knowledge Graphs and RLHF to provide accurate health recommendations"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="mb-20">
+            <div class="flex items-center mb-8">
+                <div class="flex-1 border-t border-gray-700"></div>
+                <h2 class="header-font text-3xl mx-4 text-center">Education</h2>
+                <div class="flex-1 border-t border-gray-700"></div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg vintage-card ink-border">
+                <div class="timeline-item">
+                    <h3 class="header-font text-xl mb-1">ICT Engineer's degree</h3>
+                    <p class="font-semibold">Higher School of Communication (SUP'COM)</p>
+                    <p class="text-sm italic mb-2">2022-2024</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Principal coursework: Probability, Statistical inference, Algorithmic Foundations of Optimization, Cloud, Big Data, Data science, Artificial intelligence</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="header-font text-xl mb-1">Degree in Physics and Chemistry</h3>
+                    <p class="font-semibold">Preparatory Institute For Engineering Studies of Tunis (IPEIT)</p>
+                    <p class="text-sm italic mb-2">2020-2022</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Ranked 70/1400 in the national entrance exam for engineering schools</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="mb-20">
+            <div class="flex items-center mb-8">
+                <div class="flex-1 border-t border-gray-700"></div>
+                <h2 class="header-font text-3xl mx-4 text-center">Professional Experience</h2>
+                <div class="flex-1 border-t border-gray-700"></div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg vintage-card ink-border">
+                <div class="timeline-item">
+                    <h3 class="header-font text-xl mb-1">AI Intern</h3>
+                    <p class="font-semibold">Omicrone</p>
+                    <p class="text-sm italic mb-2">Tunis, Tunisia • 07/2024 - 09/2024</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Built an automated AI-Powered Candidate Matching System that extracts key details from resumes</li>
+                        <li>Generated detailed reports with matching scores and ranked candidates based on job suitability</li>
+                        <li>Created automated emails for top candidates to streamline recruitment process</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="header-font text-xl mb-1">Machine Learning Engineer Intern</h3>
+                    <p class="font-semibold">IEEE Tunisia Section</p>
+                    <p class="text-sm italic mb-2">Tunis, Tunisia • 07/2023 - 09/2023</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Developed machine learning models for automated invoice verification by analyzing date, stamp, and signature data</li>
+                        <li>Designed a data entry system to streamline processing and improve efficiency</li>
+                        <li>Used anomaly detection techniques to identify and mitigate fraud risks in financial documents</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-20">
+            <div class="flex items-center mb-8">
+                <div class="flex-1 border-t border-gray-700"></div>
+                <h2 class="header-font text-3xl mx-4 text-center">Notable Projects</h2>
+                <div class="flex-1 border-t border-gray-700"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Project 1 -->
+                <div class="bg-white p-6 rounded-lg vintage-card h-full">
+                    <div class="h-48 overflow-hidden rounded mb-4 sepia-filter">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Medical Chatbot" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="header-font text-xl mb-2">Medical Chatbot with RAG, KG and RLHF</h3>
+                    <p class="text-sm mb-3">LangChain, LLMs, GenAI • Academic • 09/2024-01/2025</p>
+                    <p class="mb-4">Developing a medical chatbot that integrates Retrieval-Augmented Generation with Knowledge Graph, and Reinforcement Learning with Human Feedback to answer health-related queries and provide accurate, database-supported recommendations.</p>
+                    <div class="flex flex-wrap">
+                        <span class="skill-pill">LangChain</span>
+                        <span class="skill-pill">LLMs</span>
+                        <span class="skill-pill">RAG</span>
+                        <span class="skill-pill">Knowledge Graphs</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white p-6 rounded-lg vintage-card h-full">
+                    <div class="h-48 overflow-hidden rounded mb-4 sepia-filter">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="AI Candidate Matching" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="header-font text-xl mb-2">AI-Powered Candidate Matching System</h3>
+                    <p class="text-sm mb-3">LangChain, LLMs, GenAI • Internship • 08/2024</p>
+                    <p class="mb-4">Built an automated system that extracts key details from resumes, generates detailed reports with matching scores, and ranks candidates based on job suitability. The system also creates personalized emails for top candidates.</p>
+                    <div class="flex flex-wrap">
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">LLMs</span>
+                        <span class="skill-pill">NLP</span>
+                        <span class="skill-pill">Automation</span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white p-6 rounded-lg vintage-card h-full">
+                    <div class="h-48 overflow-hidden rounded mb-4 sepia-filter">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Medical Image Security" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="header-font text-xl mb-2">Securing Medical Images Transfer</h3>
+                    <p class="text-sm mb-3">Encryption, Steganography • Academic • 05/2024</p>
+                    <p class="mb-4">Ensured secure transfer of medical images and patient data through efficient deep steganography and cryptography methods, protecting sensitive healthcare information.</p>
+                    <div class="flex flex-wrap">
+                        <span class="skill-pill">Cryptography</span>
+                        <span class="skill-pill">Steganography</span>
+                        <span class="skill-pill">Security</span>
+                        <span class="skill-pill">Python</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white p-6 rounded-lg vintage-card h-full">
+                    <div class="h-48 overflow-hidden rounded mb-4 sepia-filter">
+                        <img src="kid.webp" alt="Kidney Classification" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="header-font text-xl mb-2">Kidney Classification App</h3>
+                    <p class="text-sm mb-3">Python, Tensorflow, Flask, Docker • 02/2024</p>
+                    <p class="mb-4">An end-to-end deep learning project consisting of creating a web app for kidney disease classification, implementing MLOps concepts including Docker, MLflow, and DVC.</p>
+                    <div class="flex flex-wrap">
+                        <span class="skill-pill">TensorFlow</span>
+                        <span class="skill-pill">Flask</span>
+                        <span class="skill-pill">Docker</span>
+                        <span class="skill-pill">MLOps</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-20">
+            <div class="flex items-center mb-8">
+                <div class="flex-1 border-t border-gray-700"></div>
+                <h2 class="header-font text-3xl mx-4 text-center">Technical Skills</h2>
+                <div class="flex-1 border-t border-gray-700"></div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg vintage-card ink-border">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="header-font text-xl mb-4">Machine Learning & AI</h3>
+                        <div class="flex flex-wrap">
+                            <span class="skill-pill">TensorFlow</span>
+                            <span class="skill-pill">PyTorch</span>
+                            <span class="skill-pill">LangChain</span>
+                            <span class="skill-pill">RAG</span>
+                            <span class="skill-pill">NLP</span>
+                            <span class="skill-pill">Computer Vision</span>
+                            <span class="skill-pill">Generative AI</span>
+                            <span class="skill-pill">LLMs</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="header-font text-xl mb-4">Programming</h3>
+                        <div class="flex flex-wrap">
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">C++</span>
+                            <span class="skill-pill">MATLAB</span>
+                            <span class="skill-pill">SQL</span>
+                            <span class="skill-pill">Dart</span>
+                            <span class="skill-pill">JavaScript</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="header-font text-xl mb-4">Cloud & DevOps</h3>
+                        <div class="flex flex-wrap">
+                            <span class="skill-pill">Docker</span>
+                            <span class="skill-pill">Kubernetes</span>
+                            <span class="skill-pill">FastAPI</span>
+                            <span class="skill-pill">Neo4j</span>
+                            <span class="skill-pill">MLOps</span>
+                            <span class="skill-pill">DVC</span>
+                            <span class="skill-pill">MLflow</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="header-font text-xl mb-4">Languages</h3>
+                    <div class="flex flex-wrap">
+                        <span class="skill-pill">English (Professional proficiency, TOIEC 905/990 B2 level)</span>
+                        <span class="skill-pill">Arabic (Native proficiency)</span>
+                        <span class="skill-pill">French (Intermediate)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section class="mb-20">
+            <div class="flex items-center mb-8">
+                <div class="flex-1 border-t border-gray-700"></div>
+                <h2 class="header-font text-3xl mx-4 text-center">Awards & Honors</h2>
+                <div class="flex-1 border-t border-gray-700"></div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg vintage-card ink-border">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="header-font text-xl mb-2">Revolutionizing Recruitment</h3>
+                        <p class="font-semibold">First Prize Project by EY</p>
+                        <p class="text-sm italic">AI 4 New Generation Hackathon • 12/2024</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="header-font text-xl mb-2">First Prize in TSYP CS Challenge</h3>
+                        <p class="font-semibold">IEEE ESSTHS Student Branch and IEEE Tunisia Section</p>
+                        <p class="text-sm italic">12/2023</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="header-font text-xl mb-2">Ranked 6th in Open GeoAI Hack</h3>
+                        <p class="font-semibold">IEEE GRSS Chapter</p>
+                        <p class="text-sm italic">11/2023</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="header-font text-xl mb-2">Best PACTE Project in SUP'COM</h3>
+                        <p class="text-sm italic">07/2022</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-12">
+            <div class="flex items-center mb-8">
+                <div class="flex-1 border-t border-gray-700"></div>
+                <h2 class="header-font text-3xl mx-4 text-center">Contact</h2>
+                <div class="flex-1 border-t border-gray-700"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg vintage-card ink-border">
+                    <h3 class="header-font text-2xl mb-6">Send a Message</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="name">Your Name</label>
+                            <input type="text" id="name" class="w-full px-3 py-2 border border-gray-400 rounded focus:outline-none focus:border-gray-700">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="email">Email</label>
+                            <input type="email" id="email" class="w-full px-3 py-2 border border-gray-400 rounded focus:outline-none focus:border-gray-700">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="subject">Subject</label>
+                            <select id="subject" class="w-full px-3 py-2 border border-gray-400 rounded focus:outline-none focus:border-gray-700">
+                                <option>Inquiry</option>
+                                <option>Job Opportunity</option>
+                                <option>Collaboration</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="message">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-3 py-2 border border-gray-400 rounded focus:outline-none focus:border-gray-700"></textarea>
+                        </div>
+                        <button type="submit" class="bg-gray-900 text-amber-100 px-6 py-2 rounded hover:bg-gray-800 transition duration-300 flex items-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Send
+                        </button>
+                    </form>
+                </div>
+                
+                <div>
+                    <div class="bg-white p-6 rounded-lg vintage-card mb-6">
+                        <h3 class="header-font text-xl mb-4">Contact Information</h3>
+                        <address class="not-italic space-y-2">
+                            <p class="flex items-start">
+                                <i class="fas fa-phone mr-3 mt-1 text-gray-700"></i>
+                                <span>+216 29 051 246</span>
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-envelope mr-3 mt-1 text-gray-700"></i>
+                                <span>mohammedarbi.nsibi@supcom.tn</span>
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-map-marker-alt mr-3 mt-1 text-gray-700"></i>
+                                <span>Ariana, Tunis, Tunisia</span>
+                            </p>
+                        </address>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg vintage-card">
+                        <h3 class="header-font text-xl mb-4">Connect</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/mohammed-arbi-nsibi-584a43241/" target="_blank" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                                <i class="fab fa-linkedin-in text-gray-700"></i>
+                            </a>
+                            <a href="https://github.com/Goodnight77" target="_blank" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
+                                <i class="fab fa-github text-gray-700"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-amber-100 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">&copy; 2024 Mohamed Arbi Nsibi</p>
+            <p class="text-sm italic">All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple typewriter effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const typewriter = document.querySelector('.typewriter');
+            if (typewriter) {
+                setTimeout(() => {
+                    typewriter.style.borderRightColor = 'transparent';
+                }, 3500);
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Goodnight7/3min-portfolio" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
